@@ -6,7 +6,7 @@ import { MoreOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 const ITEM_HEIGHT = 48;
-const StudentActions = ({ studentId }) => {
+const TeacherActions = ({ teacherId }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -42,7 +42,7 @@ const StudentActions = ({ studentId }) => {
           }
         }}
       >
-        <MenuItem onClick={handleClose} disableRipple component={Link} to={`/students/edit/${studentId}`}>
+        <MenuItem onClick={handleClose} disableRipple component={Link} to={`/teachers/edit/${teacherId}`}>
           <EditOutlined style={{ marginRight: 10 }} />
           Edit
         </MenuItem>
@@ -55,7 +55,7 @@ const StudentActions = ({ studentId }) => {
     </Fragment>
   );
 };
-StudentActions.propTypes = {
-  studentId: PropTypes.number
+TeacherActions.propTypes = {
+  teacherId: PropTypes.number
 };
-export default StudentActions;
+export default TeacherActions;
